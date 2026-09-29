@@ -1,0 +1,403 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  { id: 'holoo', title: 'آموزش نرم‌افزار هلو', desc: 'آموزش تخصصی نرم‌افزار حسابداری هلو به‌صورت حضوری', icon: '💻' },
+  { id: 'tax', title: 'دوره‌های مالیاتی', desc: 'آموزش قوانین مالیاتی، اظهارنامه، ارزش افزوده و معافیت‌ها', icon: '📋' },
+  { id: 'accounting', title: 'حسابداری شرکت‌ها', desc: 'ثبت دفاتر قانونی، تهیه صورت‌های مالی و بستن حساب‌ها', icon: '📊' },
+  { id: 'audit', title: 'حسابرسی', desc: 'حسابرسی داخلی و مستقل، بررسی انطباق و کنترل‌های داخلی', icon: '🔍' },
+  { id: 'consulting', title: 'مشاوره مالی', desc: 'برنامه‌ریزی مالی، تحلیل سرمایه‌گذاری و بهینه‌سازی هزینه‌ها', icon: '💼' },
+  { id: 'company', title: 'ثبت شرکت', desc: 'ثبت انواع شرکت‌ها، تغییرات، انحلال و امور ثبتی', icon: '🏢' },
+  { id: 'payroll', title: 'حقوق و دستمزد', desc: 'محاسبه حقوق، لیست بیمه، قرارداد کار و تسویه حساب', icon: '👥' },
+  { id: 'insurance', title: 'بیمه', desc: 'امور بیمه تأمین اجتماعی، سوابق و بازنشستگی', icon: '🛡️' },
+];
+
+const features = [
+  { title: 'تیم متخصص', desc: 'کارشناسان رسمی با سال‌ها تجربه در شاهرود', icon: '👨‍💼' },
+  { title: 'آموزش کاربردی', desc: 'دوره‌های هلو و مالیات با پشتیبانی رایگان', icon: '🎓' },
+  { title: 'محرمانگی کامل', desc: 'امنیت اطلاعات مالی شما اولویت ماست', icon: '🔒' },
+  { title: 'پشتیبانی مستمر', desc: 'در تمام طول سال در کنار شما هستیم', icon: '🤝' },
+];
+---
+
+<BaseLayout 
+  title="شتاب پردازش پیشرو | حسابداری، حسابرسی و آموزش هلو در شاهرود"
+  description="شرکت شتاب پردازش پیشرو در شاهرود: آموزش نرم‌افزار حسابداری هلو، دوره‌های مالیاتی، حسابداری شرکت‌ها، حسابرسی، مشاوره مالی، ثبت شرکت و حقوق و دستمزد"
+>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <span class="hero-badge">🏆 پیشرو در خدمات مالی شاهرود</span>
+        <h1 class="hero-title">
+          خدمات تخصصی <span class="hero-highlight">حسابداری و مالیات</span>
+          <br />
+          در شاهرود
+        </h1>
+        <p class="hero-desc">
+          از آموزش نرم‌افزار هلو تا حسابرسی و مشاوره مالی — همه در یک جا.
+          با بیش از ۱۷ سال تجربه در کنار شما هستیم.
+        </p>
+        <div class="hero-actions">
+          <a href="/contact" class="btn">🎓 مشاوره رایگان</a>
+          <a href="/services" class="btn btn-ghost">مشاهده خدمات</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>+۱۰۰۰</strong>
+            <span>دانش‌آموخته</span>
+          </div>
+          <div class="stat">
+            <strong>+۱۷</strong>
+            <span>سال تجربه</span>
+          </div>
+          <div class="stat">
+            <strong>+۵۰۰</strong>
+            <span>مشتری فعال</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- خدمات -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">خدمات ما</span>
+        <h2 class="section-title">هر آنچه کسب‌وکار شما نیاز دارد</h2>
+        <p class="section-sub">مجموعه‌ای کامل از خدمات مالی، حسابداری و آموزشی</p>
+      </div>
+
+      <div class="services-grid">
+        {services.map((s) => (
+          <a href={`/services#${s.id}`} class="service-card">
+            <span class="service-icon">{s.icon}</span>
+            <h3 class="service-title">{s.title}</h3>
+            <p class="service-text">{s.desc}</p>
+            <span class="service-more">بیشتر بدانید ←</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- چرا ما -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">چرا ما؟</span>
+        <h2 class="section-title">چرا شتاب پردازش پیشرو؟</h2>
+      </div>
+
+      <div class="features-grid">
+        {features.map((f) => (
+          <div class="feature-card">
+            <span class="feature-icon">{f.icon}</span>
+            <h3 class="feature-title">{f.title}</h3>
+            <p class="feature-text">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>آماده شروع همکاری هستید؟</h2>
+        <p>همین امروز با ما تماس بگیرید و مشاوره رایگان دریافت کنید</p>
+        <div class="cta-actions">
+          <a href="tel:09122733136" class="btn">📞 تماس فوری</a>
+          <a href="https://wa.me/989122733136" target="_blank" rel="noopener" class="btn btn-ghost">
+            💬 واتساپ
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #0f2557 0%, #1e3a8a 100%);
+    color: #fff;
+    padding: 90px 0 80px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: -120px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(132, 204, 22, 0.25), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -100px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(30, 58, 138, 0.6), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(132, 204, 22, 0.15);
+    border: 1px solid rgba(132, 204, 22, 0.4);
+    color: #a3e635;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+  .hero-title {
+    color: #fff;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
+  .hero-highlight {
+    color: #a3e635;
+    position: relative;
+  }
+  .hero-desc {
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    color: #cbd5e1;
+    margin-bottom: 35px;
+    line-height: 2;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  .btn-ghost {
+    background: transparent;
+    border: 2px solid #a3e635;
+    color: #a3e635;
+    padding: 12px 30px;
+  }
+  .btn-ghost:hover {
+    background: #a3e635;
+    color: #0f2557;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .stat { text-align: center; }
+  .stat strong {
+    display: block;
+    font-size: 2rem;
+    color: #a3e635;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .stat span {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+  }
+
+  /* ============ بخش‌ها ============ */
+  .section-head {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+  }
+  .section-tag {
+    display: inline-block;
+    color: #65a30d;
+    background: rgba(132, 204, 22, 0.15);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  .section-title {
+    color: #0f2557;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin-bottom: 15px;
+  }
+  .section-sub {
+    color: #6b7280;
+    font-size: 1.05rem;
+  }
+
+  /* ============ خدمات ============ */
+  .services-section { padding: 90px 0; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+  }
+  .service-card {
+    display: block;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0f2557, #84cc16);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s ease;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(15, 37, 87, 0.12);
+    border-color: rgba(132, 204, 22, 0.5);
+  }
+  .service-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    font-size: 2.4rem;
+    background: linear-gradient(135deg, rgba(15, 37, 87, 0.08), rgba(132, 204, 22, 0.18));
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .service-title {
+    color: #0f2557;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+  .service-text {
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    margin-bottom: 15px;
+  }
+  .service-more {
+    color: #65a30d;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  /* ============ چرا ما ============ */
+  .why-section {
+    background: #f9fafb;
+    padding: 90px 0;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+  }
+  .feature-card {
+    text-align: center;
+    background: #fff;
+    padding: 35px 22px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+  }
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(15, 37, 87, 0.08);
+    border-color: rgba(132, 204, 22, 0.4);
+  }
+  .feature-icon {
+    display: inline-block;
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+  }
+  .feature-title {
+    color: #0f2557;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  .feature-text {
+    color: #6b7280;
+    font-size: 0.95rem;
+  }
+
+  /* ============ CTA ============ */
+  .cta-section { padding: 80px 0; }
+  .cta-box {
+    background: linear-gradient(135deg, #0f2557 0%, #1e3a8a 100%);
+    color: #fff;
+    text-align: center;
+    padding: 60px 30px;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(132, 204, 22, 0.28), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .cta-box h2 {
+    color: #fff;
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    margin-bottom: 15px;
+    position: relative;
+  }
+  .cta-box p {
+    color: #cbd5e1;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  /* ============ ریسپانسیو ============ */
+  @media (max-width: 768px) {
+    .hero { padding: 60px 0 50px; }
+    .hero-stats { gap: 25px; }
+    .stat strong { font-size: 1.5rem; }
+    .services-section, .why-section { padding: 60px 0; }
+    .services-grid { gap: 18px; }
+    .cta-box { padding: 45px 20px; }
+  }
+</style>

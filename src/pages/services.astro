@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    id: 'holoo',
+    title: 'آموزش نرم‌افزار حسابداری هلو',
+    icon: '💻',
+    desc: 'آموزش جامع و کاربردی نرم‌افزار هلو به‌صورت حضوری، مناسب برای بازار کار',
+    items: ['آموزش مقدماتی تا پیشرفته هلو', 'آموزش تنظیمات و پیکربندی', 'آموزش انبار، فروش و خرید', 'آموزش حقوق و دستمزد در هلو', 'آموزش گزارش‌گیری حرفه‌ای', 'پشتیبانی رایگان پس از دوره']
+  },
+  {
+    id: 'tax',
+    title: 'دوره‌های مالیاتی',
+    icon: '📋',
+    desc: 'آموزش کامل قوانین مالیاتی، اظهارنامه، ارزش افزوده و معافیت‌ها',
+    items: ['آموزش مالیات بر ارزش افزوده', 'تنظیم اظهارنامه عملکرد', 'معافیت‌های مالیاتی', 'دفاع مالیاتی و اعتراض', 'مالیات بر درآمد حقوق', 'کارگاه‌های عملی مالیاتی']
+  },
+  {
+    id: 'accounting',
+    title: 'حسابداری شرکت‌ها',
+    icon: '📊',
+    desc: 'خدمات کامل حسابداری برای شرکت‌ها و کسب‌وکارها',
+    items: ['ثبت دفاتر قانونی', 'تهیه صورت‌های مالی', 'بستن حساب‌های پایان دوره', 'تهیه گزارش‌های مدیریتی', 'تنظیم دفاتر روزنامه و کل', 'حسابداری صنعتی و بهای تمام شده']
+  },
+  {
+    id: 'audit',
+    title: 'حسابرسی',
+    icon: '🔍',
+    desc: 'حسابرسی داخلی و مستقل با رعایت استانداردهای حرفه‌ای',
+    items: ['حسابرسی داخلی', 'حسابرسی مستقل', 'بررسی انطباق با قوانین', 'ارزیابی کنترل‌های داخلی', 'حسابرسی صورت‌های مالی', 'گزارش‌دهی حرفه‌ای']
+  },
+  {
+    id: 'consulting',
+    title: 'مشاوره مالی',
+    icon: '💼',
+    desc: 'مشاوره تخصصی در زمینه برنامه‌ریزی مالی و بهینه‌سازی',
+    items: ['برنامه‌ریزی مالی کسب‌وکار', 'تحلیل سرمایه‌گذاری', 'بهینه‌سازی هزینه‌ها', 'مشاوره تأمین مالی', 'تحلیل مالی و اقتصادی', 'تدوین بودجه']
+  },
+  {
+    id: 'company',
+    title: 'ثبت شرکت',
+    icon: '🏢',
+    desc: 'انجام کلیه امور ثبتی شرکت‌ها و کسب‌وکارها',
+    items: ['ثبت انواع شرکت‌ها', 'ثبت برند و علامت تجاری', 'تغییرات شرکت', 'انحلال و تصفیه', 'اخذ کد اقتصادی', 'امور روزنامه رسمی']
+  },
+  {
+    id: 'payroll',
+    title: 'حقوق و دستمزد',
+    icon: '👥',
+    desc: 'محاسبه دقیق حقوق و دستمزد و امور مربوط به کارکنان',
+    items: ['محاسبه حقوق و دستمزد', 'لیست بیمه تأمین اجتماعی', 'تنظیم قرارداد کار', 'محاسبه سنوات و عیدی', 'تسویه حساب پرسنل', 'اظهارنامه مالیات بر حقوق']
+  },
+  {
+    id: 'insurance',
+    title: 'بیمه',
+    icon: '🛡️',
+    desc: 'خدمات کامل بیمه تأمین اجتماعی و امور بازنشستگی',
+    items: ['لیست بیمه ماهانه', 'سوابق بیمه‌ای', 'بیمه اختیاری و مشاغل آزاد', 'بازنشستگی و ازکارافتادگی', 'بیمه بیکاری', 'رفع اختلاف با تأمین اجتماعی']
+  },
+];
+---
+
+<BaseLayout 
+  title="خدمات | شتاب پردازش پیشرو شاهرود"
+  description="لیست کامل خدمات شتاب پردازش پیشرو: آموزش هلو، دوره‌های مالیاتی، حسابداری، حسابرسی، مشاوره مالی، ثبت شرکت، حقوق و دستمزد و بیمه در شاهرود"
+>
+  <section class="page-header">
+    <div class="container">
+      <span class="page-label">خدمات ما</span>
+      <h1>خدمات تخصصی شتاب پردازش پیشرو</h1>
+      <p>مجموعه کامل خدمات مالی، حسابداری و آموزشی در شاهرود</p>
+    </div>
+  </section>
+
+  <section class="services-list">
+    <div class="container">
+      {services.map((s) => (
+        <div class="service-block" id={s.id}>
+          <div class="service-header">
+            <div class="service-icon-big">{s.icon}</div>
+            <div>
+              <h2>{s.title}</h2>
+              <p class="service-desc">{s.desc}</p>
+            </div>
+          </div>
+          <ul class="service-items">
+            {s.items.map((item) => <li>{item}</li>)}
+          </ul>
+          <a href="/contact" class="btn btn-navy">درخواست مشاوره</a>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f2557 0%, #1e3a8a 100%);
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+  }
+  .page-label {
+    display: inline-block;
+    background: rgba(132, 204, 22, 0.2);
+    color: #a3e635;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  .page-header h1 { color: #fff; font-size: 2.5rem; margin-bottom: 15px; }
+  .page-header p { opacity: 0.9; font-size: 1.1rem; }
+
+  .services-list { padding: 80px 0; }
+  .service-block {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .service-block::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, #0f2557, #84cc16);
+  }
+  .service-block:hover { box-shadow: 0 15px 40px rgba(15, 37, 87, 0.1); transform: translateY(-3px); }
+  .service-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 25px; }
+  .service-icon-big {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(15, 37, 87, 0.08), rgba(132, 204, 22, 0.15));
+    border-radius: 16px;
+  }
+  .service-block h2 { color: #0f2557; font-size: 1.5rem; margin-bottom: 8px; }
+  .service-desc { color: #6b7280; font-size: 1rem; }
+  .service-items {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+  .service-items li {
+    color: #374151;
+    padding: 8px 0;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .service-items li::before {
+    content: '✓';
+    color: #84cc16;
+    font-weight: 900;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .service-block { padding: 25px 20px; }
+    .service-header { flex-direction: column; }
+    .service-block h2 { font-size: 1.2rem; }
+  }
+</style>

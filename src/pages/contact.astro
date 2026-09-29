@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="تماس با ما | شتاب پردازش پیشرو شاهرود"
+  description="راه‌های ارتباط با شرکت شتاب پردازش پیشرو در شاهرود - تلفن: ۰۲۳-۳۲۲۲۵۰۹۵"
+>
+  <section class="page-header">
+    <div class="container">
+      <h1>تماس با ما</h1>
+      <p>برای مشاوره رایگان با ما در تماس باشید</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>اطلاعات تماس</h2>
+          
+          <div class="info-item">
+            <span class="icon">📍</span>
+            <div>
+              <strong>آدرس</strong>
+              <p>شاهرود، ابتدای خیابان ۲۲ بهمن، روبروی ساختمان پزشکان شفا</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="icon">📞</span>
+            <div>
+              <strong>تلفن ثابت</strong>
+              <p><a href="tel:02332225095">۰۲۳۳۲۲۲۵۰۹۵</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="icon">📱</span>
+            <div>
+              <strong>تلفن همراه</strong>
+              <p><a href="tel:09122733136">۰۹۱۲۲۷۳۳۱۳۶</a></p>
+              <p><a href="tel:09358783136">۰۹۳۵۸۷۸۳۱۳۶</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="icon">💬</span>
+            <div>
+              <strong>واتساپ</strong>
+              <p><a href="https://wa.me/989122733136" target="_blank" rel="noopener">ارسال پیام واتساپ</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="icon">🕐</span>
+            <div>
+              <strong>ساعات کاری</strong>
+              <p>همه روزه به جز ایام تعطیل</p>
+              <p>۹ الی ۱۳ و ۱۶ الی ۲۰</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h2>پیام بفرستید</h2>
+          <p class="form-desc">فرم زیر را پر کنید، در اسرع وقت با شما تماس می‌گیریم</p>
+          
+          <form action="https://formspree.io/f/YOUR_ID" method="POST">
+            <div class="form-group">
+              <label>نام و نام خانوادگی *</label>
+              <input type="text" name="name" required placeholder="مثال: علی محمدی" />
+            </div>
+            <div class="form-group">
+              <label>شماره تماس *</label>
+              <input type="tel" name="phone" required placeholder="۰۹۱۲..." />
+            </div>
+            <div class="form-group">
+              <label>موضوع</label>
+              <select name="subject">
+                <option>آموزش هلو</option>
+                <option>دوره مالیاتی</option>
+                <option>حسابداری</option>
+                <option>حسابرسی</option>
+                <option>مشاوره مالی</option>
+                <option>ثبت شرکت</option>
+                <option>حقوق و دستمزد</option>
+                <option>بیمه</option>
+                <option>سایر</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>پیام</label>
+              <textarea name="message" rows="4" placeholder="توضیحات خود را بنویسید..."></textarea>
+            </div>
+            <button type="submit" class="btn">ارسال پیام</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="map-section">
+        <h2>موقعیت ما روی نقشه</h2>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps?q=Shahrood,+22+Bahman+Street&output=embed" 
+            width="100%" 
+            height="400" 
+            style="border:0; border-radius: 16px;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f2557 0%, #1e3a8a 100%);
+    color: #fff;
+    padding: 70px 0;
+    text-align: center;
+  }
+  .page-header h1 { color: #fff; }
+
+  .contact-section { padding: 80px 0; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+  }
+
+  .contact-info h2, .contact-form h2 { color: #0f2557; margin-bottom: 25px; }
+  .info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 12px;
+    border-right: 4px solid #84cc16;
+  }
+  .info-item .icon { font-size: 1.5rem; flex-shrink: 0; }
+  .info-item strong { display: block; color: #0f2557; margin-bottom: 5px; }
+  .info-item p { color: #4b5563; margin: 3px 0; }
+  .info-item a { color: #1e3a8a; text-decoration: none; font-weight: 600; }
+  .info-item a:hover { color: #65a30d; }
+
+  .form-desc { color: #6b7280; margin-bottom: 25px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.95rem;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    direction: rtl;
+    transition: border-color 0.3s;
+    background: #fff;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: #84cc16;
+  }
+
+  .map-section h2 { color: #0f2557; margin-bottom: 25px; text-align: center; }
+  .map-container {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(15, 37, 87, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+    .page-header { padding: 50px 0; }
+    .page-header h1 { font-size: 1.8rem; }
+  }
+</style>

@@ -1,0 +1,95 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo">
+          <span class="logo-mark">ش</span>
+          <span>شتاب پردازش پیشرو</span>
+        </a>
+        <ul class="menu">
+          <li><a href="/">خانه</a></li>
+          <li><a href="/services">خدمات</a></li>
+          <li><a href="/about">درباره ما</a></li>
+          <li><a href="/contact">تماس</a></li>
+        </ul>
+        <a href="tel:09122733136" class="header-phone">
+          📞 ۰۹۱۲۲۷۳۳۱۳۶
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>شتاب پردازش پیشرو</h3>
+          <p>
+            ارائه‌دهنده خدمات تخصصی حسابداری، حسابرسی، مالیات و آموزش 
+            نرم‌افزار هلو در شاهرود.
+          </p>
+        </div>
+        <div>
+          <h3>دسترسی سریع</h3>
+          <ul>
+            <li><a href="/">خانه</a></li>
+            <li><a href="/services">خدمات</a></li>
+            <li><a href="/about">درباره ما</a></li>
+            <li><a href="/contact">تماس</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>خدمات</h3>
+          <ul>
+            <li><a href="/services#holoo">آموزش هلو</a></li>
+            <li><a href="/services#tax">مالیات</a></li>
+            <li><a href="/services#accounting">حسابداری</a></li>
+            <li><a href="/services#audit">حسابرسی</a></li>
+            <li><a href="/services#company">ثبت شرکت</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>تماس با ما</h3>
+          <p>📍 شاهرود، ابتدای خیابان ۲۲ بهمن، روبروی ساختمان پزشکان شفا</p>
+          <p>📞 <a href="tel:02332225095">۰۲۳۳۲۲۲۵۰۹۵</a></p>
+          <p>📱 <a href="tel:09122733136">۰۹۱۲۲۷۳۳۱۳۶</a></p>
+          <p>📱 <a href="tel:09358783136">۰۹۳۵۸۷۸۳۱۳۶</a></p>
+          <p>🕐 همه روزه ۹-۱۳ و ۱۶-۲۰ (به جز تعطیلات)</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © ۱۴۰۴ شرکت شتاب پردازش پیشرو — تمامی حقوق محفوظ است.
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/989122733136" class="whatsapp-float" target="_blank" rel="noopener" aria-label="واتساپ">
+    💬
+  </a>
+</body>
+</html>
